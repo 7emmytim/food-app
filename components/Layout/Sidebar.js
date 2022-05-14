@@ -23,9 +23,8 @@ const Sidebar = () => {
                             <Link
                                 href={item.to}
                                 key={item.to}
-                                className={`${router.pathname === item.to ? 'border-b-2 border-[#f1b126]' : 'border-b-2 border-[#000]'} block w-fit cursor-pointer`}
                             >
-                                <span>{item.name}</span>
+                                <span className={`${router.pathname === item.to ? 'border-b-2 border-[#f1b126]' : 'border-b-2 border-[#000]'} block w-fit cursor-pointer`}>{item.name}</span>
                             </Link>
                         )
                     })}
