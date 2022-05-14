@@ -1,9 +1,13 @@
 import { IoFastFoodOutline } from 'react-icons/io5'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-const tabs = [{ to: '/', name: 'Dashboard' }, { to: 'available', name: 'Available Items' }]
+const tabs = [{ to: '/', name: 'Dashboard' }, { to: '/available', name: 'Available Items' }]
 
 const Sidebar = () => {
+
+    const router = useRouter()
+
     return (
         <aside className='ml-[-100%] fixed z-10 top-0 px-3 xl:px-5 py-6 xl:py-8 w-full flex flex-col justify-between text-white h-screen bg-[#000] md:w-4/12 lg:ml-0 lg:w-[15%]'>
             <div className='space-y-4'>
@@ -19,7 +23,7 @@ const Sidebar = () => {
                             <Link
                                 href={item.to}
                                 key={item.to}
-                                className={({ isActive }) => `${isActive ? 'border-b-2 border-[#f1b126]' : 'border-b-2 border-[#000]'} block w-fit cursor-pointer`}
+                                className={`${router.pathname === item.to ? 'border-b-2 border-[#f1b126]' : 'border-b-2 border-[#000]'} block w-fit cursor-pointer`}
                             >
                                 <span>{item.name}</span>
                             </Link>

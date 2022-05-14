@@ -1,12 +1,10 @@
-import Image from 'next/image'
 import { BsPlusCircleFill } from 'react-icons/bs'
 
 const SingleItem = ({ item }) => {
     return (
         <div className='bg-[#f7fafb] rounded-lg overflow-hidden'>
             <div className='p-3'>
-                <Image
-                    layout='fill'
+                <img
                     className='h-40 w-full object-fill rounded-lg'
                     src={item.url}
                     alt=''
